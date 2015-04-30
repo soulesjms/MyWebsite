@@ -1,0 +1,24 @@
+<% page = { 'title' : title, 'key': 'INDEX_PAGE_NAME'} %>
+<% assets = { 'css' : [
+		'sample.styl'
+	], 'js' : [
+		'qwery.js',
+		'sample.js'
+	]
+} %>
+
+	<div id ="main">
+		<div class="something">
+			here is an image:
+			<img src="<%= img('icon/arrow_left_white_11x11.png')%>" 
+			alt="<%= i18n('icon') %>">
+			
+			<% if(feature('somethingEx')) {%>
+
+				<div class="another">
+					if something is on, you see me!
+				</div>
+			<% } %>
+			Something value: <%= something %>
+		</div>
+	</div>
