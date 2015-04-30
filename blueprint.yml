@@ -1,0 +1,13 @@
+version: 0.3 # Blueprint Schema Version
+app:
+  name: soulesjms-app
+  build:
+    type: npm
+  deploy:
+    systems:
+      integration:
+        heroku:
+      beta:
+        heroku:
+      production:
+        heroku:
