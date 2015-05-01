@@ -2,9 +2,6 @@
 <html>
 <head>
   <title><%= page.title %> &#8212; Skills</title>
-   
-  <%- css('3.3.2/bootstrap.css') %>
-  <%- css('sample.styl') %>
 
   <% if(typeof assets != "undefined" && assets.css) { %>
     <% for(var filename in assets.css) { %>
@@ -30,7 +27,7 @@
   
   <% if(process.env.NODE_ENV == "production") { %>
     <%- js('clientManifest.js') %>
-  <% } %>
+<% } %>
 
   <% if(typeof assets != "undefined"  && assets.js) { %>
     <% for(var i=0, l=assets.js.length; i<l; i++) { %>

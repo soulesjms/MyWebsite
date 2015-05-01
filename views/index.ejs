@@ -1,8 +1,7 @@
 <% page = { 'title' : 'Mark\'s Test Page', 'key': 'INDEX_PAGE_NAME'} %>
-<% assets = { 'css' : [], 'js' : ['modules/underscore.js', 'angular-1.2.10.js', 'sample.js']} %>
+<% assets = { 'css' : ['3.3.2/bootstrap.css','sample.styl'], 'js' : ['modules/underscore.js', 'angular-1.2.10.js', 'sample.js']} %>
 
-
-<div ng-app>
+<div ng-app="TodoApp">
     <h1 class="font21 serif"><%- i18n('welcome_title')%></h1>
     <p><%- i18n('welcome_message')%></p>
 
