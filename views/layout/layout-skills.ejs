@@ -2,14 +2,9 @@
 <html>
 <head>
   <title><%= page.title %> &#8212; Skills</title>
- 
-  <% if (typeof is_responsive === 'undefined') is_responsive = false %>
-  <% if (is_responsive === true) {  %>
-    <%- css('fresh_responsive.css') %>
-  <% } %>
    
-  <%- css('fresh.css') %> 
-
+  <%- css('3.3.2/bootstrap.css') %>
+  <%- css('sample.styl') %>
 
   <% if(typeof assets != "undefined" && assets.css) { %>
     <% for(var filename in assets.css) { %>
@@ -29,11 +24,9 @@
 <body>
 
 
-  <%- partial('partials/header') %>
+<div class="header">This is my cool head stuff</div>
   <%- body %>
-  <%- partial('partials/footer') %>
-
-  <%- include ./layout/partials/inject.ejs %>
+<div class="footer"><br>Mark Soules Web Development inc.</div>
   
   <% if(process.env.NODE_ENV == "production") { %>
     <%- js('clientManifest.js') %>

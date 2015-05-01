@@ -1,0 +1,20 @@
+<% page = { 'title' : 'areyoucool', 'key': 'INDEX_PAGE_NAME'} %>
+<% assets = { 'css' : [
+    'sample.styl'
+], 'js' : [
+    'qwery.js',
+    'sample.js'
+]
+} %>
+
+<div id ="main">
+    <h1>Are you cool???</h1>
+    <h2><% if(theCool) { %>
+         you're cool dude!
+       <% } else { %>
+        you're not cool man!
+        <% } %>
+    </h2>
+
+    <h3><%- theCool?'Awesome':'Too bad'%></h3>
+</div>

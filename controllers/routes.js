@@ -4,6 +4,7 @@ module.exports = function(app) {
   app.set("view options", {
     layout: "layout/layout-skills"
   });
+  layout is referenced in this file!
   */
   
   app.get('/something', function(req, res){
@@ -15,11 +16,16 @@ module.exports = function(app) {
       "title": "Hello World"
     });
   });
-  app.get('/:page', function(req, res){
-    res.render(req.params.page, {});
+
+  app.get('/sample', function(req, res){
+    res.render('sample');
   });
 
   app.get('/', function(req, res){
-    res.render("index", {});
+    res.render("index", {layout: "layout/layout-skills"});
+  });
+  app.get('/cool', function(req, res){
+    var coolness = Math.floor(Math.random() * 2);
+    res.render("cool", {theCool:coolness, layout: "layout/layout-skills"});
   });
 }

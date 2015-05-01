@@ -1,14 +1,31 @@
-<% page = { 'title' : 'Hello World index', 'key': 'INDEX_PAGE_NAME'} %>
-<% assets = { 'css' : [], 'js' : [] } %>
-<div id="main" class="experiments">
-  <div class="no-layout">
-    <h1 class="font21 serif"><%- i18n('welcome_title')%></h1>
-    <section class="basic">
-      <p>
-        <%- i18n('welcome_message')%> <img src="<%= img('icon/arrow_left_white_11x11.png') %>" alt="">
-      </p>
+<% page = { 'title' : 'Mark\'s Test Page', 'key': 'INDEX_PAGE_NAME'} %>
+<% assets = { 'css' : [], 'js' : ['modules/underscore.js', 'angular-1.2.10.js', 'sample.js']} %>
 
-      <a href="sample" class="btn btn-water"><%- i18n('sample_link')%></a>
-    </section>
-  </div>
+
+<div ng-app>
+    <h1 class="font21 serif"><%- i18n('welcome_title')%></h1>
+    <p><%- i18n('welcome_message')%></p>
+
+    <div ng-controller="TodoCtrl">
+        Total todos: {{getTotalTodos()}}
+        <ul class="unstyled">
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" ng-model="todo.done">
+                <span ng-hide="editing" ng-click="editing = true" class="done-{{todo.done}}">{{todo.text}}</span>
+                <form ng-show="editing" ng-submit="editing = false" class="form">
+                    <input type="text" ng-model="todo.text" ng-required/>
+                    <button class="btn" type="submit">Save</button>
+                </form>
+            </li>
+        </ul>
+        <form class"form-horizontal">
+            <input type="text" ng-model="formTodoText" ng-model-instant>
+            <button class="btn" ng-click="addTodo()"><i class="glyphicon glyphicon-plus"></i> Add </button>
+        </form>
+
+        <button class="btn-large" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"> Clear Completed</i></button>
+    </div>
+
+
+    <a href="http://gamersoulanimation.blogspot.com/"><%- i18n('sample_link')%></a>
 </div>
