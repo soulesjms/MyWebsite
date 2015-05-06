@@ -13,7 +13,8 @@ module.exports = function(app) {
       something = true;
     }
     res.render('something', {
-      "title": "Hello World"
+      "title": "Hello World",
+      layout: "layout/layout-skills"
     });
   });
 
@@ -24,8 +25,14 @@ module.exports = function(app) {
   app.get('/', function(req, res){
     res.render("index", {layout: "layout/layout-skills"});
   });
+  app.get('/index', function(req, res){
+    res.render("index", {layout: "layout/layout-skills"});
+  });
   app.get('/cool', function(req, res){
     var coolness = Math.floor(Math.random() * 2);
     res.render("cool", {theCool:coolness, layout: "layout/layout-skills"});
+  });
+  app.get('/animation', function(req, res){
+    res.render("animation", {layout: "layout/layout-skills"});
   });
 }

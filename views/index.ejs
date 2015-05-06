@@ -1,30 +1,89 @@
-<% page = { 'title' : 'Mark\'s Test Page', 'key': 'INDEX_PAGE_NAME'} %>
-<% assets = { 'css' : ['3.3.2/bootstrap.css','sample.styl'], 'js' : ['modules/underscore.js', 'angular-1.2.10.js', 'sample.js']} %>
+<% page = { 'title' : 'index', 'key': 'INDEX_PAGE_NAME'} %>
+<% assets = {
+	'css' : ['3.3.2/bootstrap.css', 'sample.styl'],
+	'js' : ['jquery-1.9.1.js', 'MenuBar.js', '3.3.2/bootstrap.min.js', 'jquery-2.1.1.min.js', 'sample.js']}
+%>
 
-<div ng-app="TodoApp">
-    <h1 class="font21 serif"><%- i18n('welcome_title')%></h1>
-    <p><%- i18n('welcome_message')%></p>
+<div class="bannerContainer">
+<div class="container myCont">
 
-    <div ng-controller="TodoCtrl">
-        Total todos: {{getTotalTodos()}}
-        <ul class="unstyled">
-            <li ng-repeat="todo in todos">
-                <input type="checkbox" ng-model="todo.done">
-                <span ng-hide="editing" ng-click="editing = true" class="done-{{todo.done}}">{{todo.text}}</span>
-                <form ng-show="editing" ng-submit="editing = false" class="form">
-                    <input type="text" ng-model="todo.text" ng-required/>
-                    <button class="btn" type="submit">Save</button>
-                </form>
-            </li>
-        </ul>
-        <form class"form-horizontal">
-            <input type="text" ng-model="formTodoText" ng-model-instant>
-            <button class="btn" ng-click="addTodo()"><i class="glyphicon glyphicon-plus"></i> Add </button>
-        </form>
+	<br>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
 
-        <button class="btn-large" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"> Clear Completed</i></button>
-    </div>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="<%- img('kiritosword4.png') %>" alt="Chania" width="100%">
+				<div class="carousel-caption">
+					<h3>This is a sword</h3>
+					<p>Make an awesome sword. Aren't you jealous?</p>
+				</div>
+			</div>
 
+			<div class="item">
+				<img src="<%- img('GateKeeper.png') %>" alt="Chania">
+				<div class="carousel-caption">
+					<h3>Enter if you dare</h3>
+					<p>User blender's mist and lighting engine</p>
+				</div>
+			</div>
 
-    <a href="http://gamersoulanimation.blogspot.com/"><%- i18n('sample_link')%></a>
+			<div class="item">
+				<img src="<%- img('sparksWOOT.png') %>" alt="Flower">
+				<div class="carousel-caption">
+					<h3>Create a light show</h3>
+					<p>Particle special effects and long shutter effects for epic designs</p>
+				</div>
+			</div>
+
+			<div class="item">
+				<img src="<%- img('violin55.png') %>" alt="Flower">
+				<div class="carousel-caption">
+					<h3>Realistic objects and lighting</h3>
+					<p>Cycles is the way to render light and reflective surfaces.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="Area">
+
+	<h3>Mark Soules' Web Page</h3>
+
+	Welcome to my webpage. My name is Jonathan Soules and I'm making this website to show what I can do! Gamersoul Software will hopefully be the name of my software development company when I get into actual software design. <br />
+	<br />
+	I am a student at Brigham Young University - Idaho. Many of my interests and abilities are in the field of music, technology, and Animation, and I'd like to illustrate this via a website. :D<br /><br />
+	Another Purpose of this website is to post my assignments for my CS313 Web Engineering Course.<br /><br />
+	<div id="cols">
+		<div class="Col">
+			<h3>I'm a heading!</h3>
+			And this is dummy text where I get to talk about myself and how awesome I am at everything.
+		</div>
+		<div class="Col">
+			<h3>I'm a heading too!</h3>
+			First column with content and stuffs. I'm bored and I'm gonna put a video in here!
+			<iframe width="100%" height="250px" src="https://www.youtube.com/embed/JO9i4z4zcIA" frameborder="0" allowfullscreen></iframe>
+			I like league of legends, so this is a cool video :D
+		</div>
+		<div class="Col">
+			<h3>This is a heading for this column</h3>
+			First column with content and stuffs, and more stuff in this div? which then has a horizontal rule inside of it.
+			<hr>
+			<h3>Then it has another heading</h3>
+			with some more text for fun and kicks and giggles.<br>
+			<button onclick="clickCounter()">Click me!</button><br>
+			<div id="result"></div>
+			Yay Cookies :D
+		</div>
+	</div>
 </div>

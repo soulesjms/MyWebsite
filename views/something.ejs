@@ -1,24 +1,35 @@
-<% page = { 'title' : title, 'key': 'INDEX_PAGE_NAME'} %>
-<% assets = { 'css' : [
-		'sample.styl'
-	], 'js' : [
-		'qwery.js',
-		'sample.js'
-	]
-} %>
+<% page = { 'title' : 'Mark\'s Test Page', 'key': 'INDEX_PAGE_NAME'} %>
+<% assets = { 'css' : ['3.3.2/bootstrap.css','sample.styl'],
+    'js' : [
+    'modules/underscore.js',
+    'angular-1.2.10.js',
+    'sample.js',
+    'MenuBar.js']} %>
 
-	<div id ="main">
-		<div class="something">
-			here is an image:
-			<img src="<%= img('icon/arrow_left_white_11x11.png')%>" 
-			alt="<%= i18n('icon') %>">
-			
-			<% if(feature('somethingEx')) {%>
+<div ng-app="TodoApp">
+    <h1 class="font21 serif"><%- i18n('welcome_title')%></h1>
+    <p><%- i18n('welcome_message')%></p>
 
-				<div class="another">
-					if something is on, you see me!
-				</div>
-			<% } %>
-			Something value: <%= something %>
-		</div>
-	</div>
+    <div ng-controller="TodoCtrl">
+        Total todos: {{getTotalTodos()}}
+        <ul class="unstyled">
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" ng-model="todo.done">
+                <span ng-hide="editing" ng-click="editing = true" class="done-{{todo.done}}">{{todo.text}}</span>
+                <form ng-show="editing" ng-submit="editing = false" class="form">
+                    <input type="text" ng-model="todo.text" ng-required/>
+                    <button class="btn" type="submit">Save</button>
+                </form>
+            </li>
+        </ul>
+        <form class"form-horizontal">
+            <input type="text" ng-model="formTodoText" ng-model-instant>
+            <button class="btn" ng-click="addTodo()"><i class="glyphicon glyphicon-plus"></i> Add </button>
+        </form>
+
+        <button class="btn-large" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"> Clear Completed</i></button>
+    </div>
+
+
+    <a href="http://gamersoulanimation.blogspot.com/"><%- i18n('sample_link')%></a>
+</div>
