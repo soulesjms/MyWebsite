@@ -32,7 +32,13 @@ module.exports = function(app) {
     var coolness = Math.floor(Math.random() * 2);
     res.render("cool", {theCool:coolness, layout: "layout/layout-skills"});
   });
-  app.get('/animation', function(req, res){
+  app.get('/Animation', function(req, res){
     res.render("animation", {layout: "layout/layout-skills"});
   });
+  app.get("/Music", function(req, res) {
+    res.render("music", {layout: "layout/layout-skills"});
+  })
+  app.get("/WebDesign", function(req, res) {
+    res.render("webDesign", {layout: "layout/layout-skills"});
+  })
 }

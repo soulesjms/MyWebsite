@@ -1,0 +1,19 @@
+<% page = { 'title' : 'web design', 'key': 'INDEX_PAGE_NAME'} %>
+<% assets = {
+    'css' : ['3.3.2/bootstrap.css', 'sample.styl'],
+    'js' : ['jquery-1.9.1.js', 'MenuBar.js', '3.3.2/bootstrap.min.js', 'jquery-2.1.1.min.js', 'logic.js']}
+%>
+
+<div id="Area">
+this is a div with stuff in it.<br>
+    <form id="frm1">
+        <input type="text" placeholder="First Name"><br>
+        <input type="text" placeholder="Last Name">
+    </form>
+
+    <button onclick="getFromForm()">Click ME!</button>
+    <br><br>
+    <br>Your name is: <div id="demo"></div>
+    <button onclick="display()">increment</button>
+    <button onclick="testModule.resetCounter()">reset</button>
+</div>
