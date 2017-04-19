@@ -5,9 +5,9 @@
   "main": "./app.js",
   "dependencies": {
     "async": "~0.9.0",
-    "theme-engage": "git+https://github.com/fs-webdev/theme-engage.git",
-    "frontier-build-tools": "git+https://github.com/fs-webdev/frontier-build-tools.git",
-    "woodruff": "git+https://github.com/fs-webdev/woodruff.git",
+    "theme-engage": "git+https://github.com/soulesjms/theme-engage.git",
+    "frontier-build-tools": "git+https://github.com/soulesjms/frontier-build-tools.git",
+    "woodruff": "git+https://github.com/soulesjms/woodruff.git",
     "startup": "~1.0.0"
   },
   "devDependencies": {
